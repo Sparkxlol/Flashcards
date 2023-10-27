@@ -2,30 +2,30 @@ public class FlashcardDeck
 {
     public FlashcardDeck(FlashcardRaw[] flashcards)
     {
-        Flashcards = flashcards;
+        this.flashcards = flashcards;
     }
 
     public FlashcardDeck(string[] terms, string[] descriptions)
     {
         if (terms.Length != descriptions.Length)
-            Flashcards = new FlashcardRaw[0];
+            flashcards = new FlashcardRaw[0];
 
-        Flashcards = new FlashcardRaw[terms.Length];
+        flashcards = new FlashcardRaw[terms.Length];
         for (int i = 0; i < terms.Length; i++)
-            Flashcards[i] = new FlashcardRaw(terms[i], descriptions[i]);
+            flashcards[i] = new FlashcardRaw(terms[i], descriptions[i]);
     }
 
-    public FlashcardRaw[] Flashcards { get; set; }
+    public FlashcardRaw[] flashcards { get; set; }
 }
 
 public class FlashcardRaw
 {
     public FlashcardRaw(string term, string description)
     {
-        Term = term;
-        Description = description;
+        this.term = term;
+        this.description = description;
     }
 
-    public string Term { get; set; }
-    public string Description { get; set; }
+    public string term { get; set; }
+    public string description { get; set; }
 }
